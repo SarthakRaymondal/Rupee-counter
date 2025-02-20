@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="tn.png">
+    <title>Rupee Counter</title>
+    <style>
+        .ft1 {
+            font-family: "Atkinson Hyperlegible Next", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+        }
+        body {
+            margin: 0;
+        }
+        .c1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            user-select: text;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .inp {
+            width: 100px;
+            height: 50px;
+            border: 2px solid rgb(55, 54, 54);
+            border-radius: 15px;
+            font-size: 35px;
+            text-align: center;
+            color: black;
+            font-weight: 900;
+        }
+        .txt1 {
+            margin-left: 5px;
+            font-size: 30px;
+            font-weight: 900;
+        }
+        .div1 {
+            width: 90%;background-color:white;
+        }
+        .btn1 {
+            margin-left: 5px;
+            width: 100px;
+            height: 55px;
+            border: none;
+            border-radius: 15px;
+            font-weight: 900;
+            transition: 0.5s;
+        }
+        .btn1:hover {
+            filter: brightness(80%);
+        }
+        .aaa {
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body class="ft1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next&display=swap" rel="stylesheet">
+    <!--JS stuff:
+        scoreos = ttp1.offsetTop
+        po = window.pageYOffset
+    -->
+    <p style="font-size: 46px;font-weight: 900;text-align: center;user-select: none;">Rupee Counter<span style="transition: 0.5s;cursor:pointer" onmouseover="this.style.fontSize = '70px'" onmouseout="this.style.fontSize = '46px'" onclick="var cc = new Audio ('s1.mp3');cc.playbackRate = 2;cc.play()">💵</span></p>
+    <div class="c1">
+            <a style="font-size: 60px;margin-right: 5px;font-weight: 900;">₹</a><input type="number" class="inp" placeholder=":)" id="inp1"><button class="btn1 ft1" onclick="cal1()">Calculate</button>
+    </div>
+    <a style="font-size: 15px;font-weight: 900;">So,u might be thinking what this calculator kinda does?So basically it is a tool that allows to divide ur total money to pieces.This can come useful if u are doing some indian rupee note calculation😛There's only one condition thou!!Decimals won't be counted as paisas are almost useless(even thou i like them)</a>
+    <div><input type="radio" id="o1" name="opt." onclick="so1()"><a style="font-weight: 900;margin-right: 5px;">Normal</a><input type="radio" id="o2" name="opt." onclick="so2(this)"><a style="font-weight: 900;">Custom</a></div><br>
+    <div class="c1">
+        <div class="div1">
+                <div style="display: flex;align-items: center;margin-bottom: 5px;">
+                    <img src="1000r.jpeg" width="100">
+                    <a class="ft1 txt1 aaa" id="1" idea=" one thousand rupees">0</a>
+                </div>
+                <div style="display: flex;align-items: center;margin-bottom: 5px;">
+                    <img src="500r.jpeg" width="100">
+                    <a class="ft1 txt1 aaa" id="2" idea=" five hundred rupees">0</a>
+                </div>
+                <div style="display: flex;align-items: center;margin-bottom: 5px;">
+                    <img src="100r.jpeg" width="100">
+                    <a class="ft1 txt1 aaa" id="3" idea=" one hundred rupees">0</a>
+                </div>
+                <div style="display: flex;align-items: center;margin-bottom: 5px;">
+                    <img src="50r.jpeg" width="100">
+                    <a class="ft1 txt1 aaa" id="4" idea=" fifty rupees">0</a>
+                </div>
+                <div style="display: flex;align-items: center;margin-bottom: 5px;">
+                    <img src="10r.jpeg" width="100">
+                    <a class="ft1 txt1 aaa" id="5" idea=" ten rupees">0</a>
+                </div>
+                <div style="display: flex;align-items: center;margin-bottom: 5px;">
+                    <img src="1r.jpeg" width="100">
+                    <a class="ft1 txt1 aaa" id="6" idea=" one rupees">0</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+<script>
+    var mode = "n";
+    document.getElementById("o1").checked = true
+    function so1() {
+        mode = "n"
+    }
+    function so2(myself) {
+        document.getElementById("o1").checked = true
+        myself.checked = false
+        alert("Custom mode coming later on.....\nWhat does it do?:\nAll it does is let u select the  note types and based on that it will do the calculation.For ex- how many 50 rs are required to fill up 500 rs.")
+    }
+    function cal1() {
+        if(mode === "n" ) {
+            acal1()
+        }
+        else{}
+    }
+    function acal1() {
+        var list1 = [1000,500,100,50,10,1]
+        //ttr , fh , oh , ft , t , o 
+        var ttr = 0
+        var fh = 0
+        var oh = 0
+        var ft = 0
+        var t = 0
+        var o = 0
+        var val1 = parseInt(document.getElementById("inp1").value);
+        if(isNaN(val1)  || val1 === 0) {
+            alert("sorry don't get that :(")
+        }
+        else {
+            if(val1 < 0) {
+                alert("Not enough money !!!")
+            }
+            else {
+                i = 0;
+                e = 0;
+                noo = 0//IDK 
+                r = val1;
+                console.log(r)
+                console.log("\n\n\nNew progress:")
+                while(i < list1.length-1) {
+                    //The calculation that u see here is done using my 1IQ brain🧠.
+                    if(r === 0) {
+                        break;
+                    }
+                    //Planned to use r > 1000,but screw that cuz that's not important
+                    if(list1[i] === 1000 ) {
+
+                        e = r % 1000
+                        noo = parseInt(r / 1000)
+                        ttr = noo
+                        r = e
+                        console.log("one thousand:" , ttr)
+                        console.log("one thousand remainder:" ,e)
+                    }
+                    if(list1[i] === 500 ) {
+
+                        e = r % 500
+                        noo = parseInt(r / 500)
+                        fh = noo
+                        r = e
+                        console.log("five hundred:" , fh)
+                        console.log("five hundred remainder:" ,e)
+                    }
+                    if(list1[i] === 100 ) {
+
+                        e = r % 100
+
+                        noo = parseInt(r / 100)
+                        oh = noo
+                        r = e
+                        console.log("one hundred:" , oh)
+                        console.log("one hundred remainder:" ,e)
+                    }
+                    if(list1[i] === 50 ) {
+
+                        e = r % 50
+                        noo = parseInt(r / 50)
+                        ft = noo
+                        r = e
+                        console.log("fifty:" , ft)
+                        console.log("fifty remainder:" ,e)
+                    }
+                    if(list1[i] === 10) {
+
+                        e = r % 10
+                        noo = parseInt(r / 10)
+                        t = noo
+                        r = e
+                        console.log("ten:" , t)
+                        console.log("ten remainder:" ,e)
+
+                    }
+                    i+= 1
+                    }
+                o = val1 - ((ttr*1000) + (fh*500) + (oh*100) + (ft*50) + (t*10)) //I know i could just set the reminder as no of 1 rupees,but since i'm an idiot,i did this
+                console.log("\none thousand:",ttr ,"\nfive hundred:", fh ,"\none hundred:", oh ,"\nfifty:", ft ,"\nten:", t ,"\none:", o )
+                sendval1(ttr , fh , oh , ft , t , o )
+
+        }
+        }
+    }
+    let intervalId = 0;
+
+function sendval1(v1, v2, v3, v4, v5, v6) {
+    var nnl = [v1, v2, v3, v4, v5, v6];
+    const ase = document.getElementsByClassName("aaa");
+    let i = 0;
+    let att = "";
+
+
+    if (intervalId) {
+        clearInterval(intervalId);
+    }
+
+    while (i < ase.length) {
+        ase[i].style.opacity = 0;
+        i += 1;
+    }
+
+
+    intervalId = setInterval(function () {
+        i = 0;
+       
+        while (i < ase.length) {
+            att = ase[i].getAttribute("idea");
+            ase[i].innerHTML = nnl[i] + att;
+            i += 1;
+        }
+
+       
+        i = 0;
+        while (i < ase.length) {
+            ase[i].style.opacity = 1;
+            i += 1;
+        }
+
+        // Clear the interval after executing once
+        clearInterval(intervalId);
+    }, 500);
+}
+</script>
+</body>
+</html>
