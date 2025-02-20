@@ -1,2 +1,2 @@
-# Rupee-counter
-tool :)
+# Rupee-counter🗿🗿💵😛🧠🤫
+## tool :)
